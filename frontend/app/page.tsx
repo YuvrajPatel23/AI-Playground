@@ -11,7 +11,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/comparison/models/available')
+    fetch('https://ai-playground-a1x8.onrender.com/api/comparison/models/available')
       .then(res => res.json())
       .then(data => {
         setModels(data);
@@ -26,7 +26,7 @@ export default function Home() {
     setLoading(true);
     setResponses({});
 
-    const res = await fetch('http://localhost:8000/api/comparison/start', {
+    const res = await fetch('https://ai-playground-a1x8.onrender.com/api/comparison/start', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ prompt, models: selectedModels }),
@@ -34,7 +34,7 @@ export default function Home() {
 
     const { sessionId } = await res.json();
 
-    const eventSource = new EventSource(`http://localhost:8000/api/comparison/stream/${sessionId}`);
+    const eventSource = new EventSource(`https://ai-playground-a1x8.onrender.com/api/comparison/stream/${sessionId}`);
 
     eventSource.onmessage = (event) => {
       const data = JSON.parse(event.data);
