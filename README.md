@@ -7,6 +7,14 @@ A full-stack application for comparing responses from multiple AI models side-by
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
+## 🌐 Live Demo
+
+**Frontend:** https://ai-playground-khaki.vercel.app  
+**Backend API:** https://ai-playground-a1x8.onrender.com/api/comparison/models/available
+
+Try it now - select models, enter a prompt, and watch real-time AI responses!
+
+---
 ## 🌟 Features
 
 - **Real-time Streaming**: Character-by-character streaming from AI models using Server-Sent Events (SSE)
