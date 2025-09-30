@@ -5,9 +5,9 @@ import ReactMarkdown from 'react-markdown';
 
 export default function Home() {
   const [prompt, setPrompt] = useState('');
-const [models, setModels] = useState<any[]>([]);
-const [selectedModels, setSelectedModels] = useState<string[]>([]);
-  const [responses, setResponses] = useState({});
+  const [models, setModels] = useState<any[]>([]);
+  const [selectedModels, setSelectedModels] = useState<string[]>([]);
+  const [responses, setResponses] = useState<Record<string, any>>({});
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const [selectedModels, setSelectedModels] = useState<string[]>([]);
     };
   };
 
-  const toggleModel = (modelId) => {
+  const toggleModel = (modelId: string) => {
     if (selectedModels.includes(modelId)) {
       setSelectedModels(selectedModels.filter(id => id !== modelId));
     } else {
