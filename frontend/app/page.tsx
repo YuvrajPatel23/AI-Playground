@@ -5,8 +5,8 @@ import ReactMarkdown from 'react-markdown';
 
 export default function Home() {
   const [prompt, setPrompt] = useState('');
-  const [models, setModels] = useState([]);
-  const [selectedModels, setSelectedModels] = useState([]);
+const [models, setModels] = useState<any[]>([]);
+const [selectedModels, setSelectedModels] = useState<string[]>([]);
   const [responses, setResponses] = useState({});
   const [loading, setLoading] = useState(false);
 
