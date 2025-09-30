@@ -6,9 +6,12 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   
   app.enableCors({
-    origin: ['http://localhost:3000', 'https://your-frontend-url.vercel.app'],
+    origin: [
+      'http://localhost:3000',
+      'https://ai-playground-khaki.vercel.app'
+    ],
     credentials: true,
-  });
+});
   
   app.useGlobalPipes(new ValidationPipe());
   
